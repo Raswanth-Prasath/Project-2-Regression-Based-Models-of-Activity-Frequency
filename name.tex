@@ -1,0 +1,467 @@
+\section{Analysis of Activity Frequency and Duration}
+\subsection{Activity Frequency Analysis: Males vs. females}
+The analysis examined differences in the frequency of daily out-of-home activity between males and females. The sample included 5,645 adults (2,661 males and 2,984 females). Out-of-home activities were defined as trips with purposes coded as work (10), shopping/errands (40), or social/recreational (50). The \texttt{DWELTIME} variable quantified activity duration, excluding trips with missing or negative values. 
+
+\begin{table}[h]
+\centering
+\caption{Out-of-home activity duration of the compared segments: Descriptive statistics with t-test results}
+\begin{tabularx}{\textwidth}{X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+\toprule
+\multicolumn{4}{l}{\textbf{DESCRIPTIVE STATISTICS}} \\
+\midrule
+\textbf{Gender} & \textbf{Segment Size} & \textbf{Mean} & \textbf{Std. Dev} \\
+\midrule
+Male & 2661 & 2.30 & 2.16 \\
+Female & 2984 & 2.37 & 2.23 \\
+\midrule
+\multicolumn{4}{l}{\textbf{T-TEST: INDEPENDENT SAMPLE ($\alpha=0.05$)}} \\
+\multicolumn{4}{l}{t = -1.175; df = 5643; p-value = 0.2399} \\
+\multicolumn{4}{l}{95\% confidence interval: [-0.184, 0.046]} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\par{The results indicate that while females engage in slightly more daily out-of-home activities on average (0.07 more activities per day), this difference is not statistically significant at the 0.05 level. The relatively small p-value (0.239) and narrow confidence interval suggest that any true population difference in activity frequency between genders is likely to be modest in magnitude.
+
+The lack of significant difference in activity frequency between males and females suggests that, in this region, daily mobility patterns are relatively gender-neutral in terms of the number of activities undertaken. }
+
+
+\subsection{Activity Duration Analysis: Auto-deficient vs. Auto-sufficient}
+The analysis compared the total duration of out-of-home daily activity between auto-deficient and auto-sufficient households. The sample included 5,645 adults (632 from auto-deficient households and 5,013 from auto-sufficient households). Auto deficiency was determined by comparing household vehicle count (\texttt{HHVEHCNT}) to licensed drivers (\texttt{DRVRCNT}). 
+
+\begin{table}[h]
+\centering
+\caption{Out-of-home activity duration of the compared segments: Descriptive statistics with t-test results}
+
+\begin{tabularx}{\textwidth}{X>{\centering\arraybackslash}X>{\centering\arraybackslash}X>{\centering\arraybackslash}X}
+\toprule
+\multicolumn{4}{l}{\textbf{DESCRIPTIVE STATISTICS}} \\
+\midrule
+\textbf{Auto sufficiency/} & \textbf{Segment} & \textbf{Mean} & \textbf{Std.} \\
+\textbf{deficiency} & \textbf{Size} & \textbf{(min)} & \textbf{Dev} \\
+\midrule
+Auto-deficient & 632 & 196.22 & 215.87 \\
+Auto-sufficient & 5013 & 243.28 & 233.57 \\
+\midrule
+\multicolumn{4}{l}{\textbf{T-TEST: INDEPENDENT SAMPLE ($\alpha=0.05$)}} \\
+\multicolumn{4}{l}{t = -4.812; df = 5643; p-value = 1.53e-06} \\
+\multicolumn{4}{l}{95\% confidence interval: [-66.23, -27.89]} \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\par{The results show a highly significant difference in activity duration between auto-deficient and auto-sufficient households. Members of auto-sufficient households spend on average 47.06 more minutes per day in out-of-home activities compared to those in auto-deficient households. The extremely small p-value (p \textless 0.001) and confidence interval that excludes zero provide strong evidence that this difference represents a genuine population effect.
+
+The approximately 47-minute difference suggests that limited vehicle access may constrain not just the ability to reach destinations, but also the amount of time people can spend engaging in out-of-home activities.}
+
+
+
+% \begin{figure}[h]
+% \centering
+% \includegraphics[width=0.8\textwidth]{media/image2.png}
+% \caption{Activity Duration Comparison by Auto Sufficiency}
+% \end{figure}
+
+\section{Chi-Square Analysis of Trip Purpose Distributions}
+\subsection{Workers vs. Non-Workers Analysis}
+
+The analysis revealed substantial differences in trip purpose distribution between workers and non-workers. Trip purpose distributions were analyzed using the \texttt{WHYTRP1S} variable.  A chi-square independence test showed a highly significant relationship between employment status and trip purpose ($\chi^2 = 2959.4$, df = 7, p \textless 0.001). The distributions of trips by purpose for workers and non-workers are exhibited in Table \ref{tab:trip_purpose_employment}.
+
+
+\begin{table}[h!]
+  \centering
+  \caption{Trip Purpose Distribution by Employment Status}
+  \label{tab:trip_purpose_employment}
+  \begin{tabular}{lcccc}
+    \toprule
+    \multirow{2}{*}{Trip Purpose} & \multicolumn{2}{c}{Workers} & \multicolumn{2}{c}{Non-Workers} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+                                 & Count & Percent & Count & Percent \\
+    \midrule
+    Home                         & 3415  & 33.06\% & 3621  & 35.43\% \\
+    Work                         & 2563  & 24.81\% & 67    & 0.66\%  \\
+    School/Religious   & 144   & 1.39\%  & 224   & 2.19\%  \\
+    Medical/Dental               & 142   & 1.37\%  & 382   & 3.74\%  \\
+    Shopping/Errands             & 1607  & 15.56\% & 3071  & 30.05\% \\
+    Social/Recreational          & 852   & 8.25\%  & 1244  & 12.17\% \\
+    Transport Someone            & 674   & 6.53\%  & 586   & 5.73\%  \\
+    Meals                        & 697   & 6.75\%  & 746   & 7.30\%  \\
+    Other                        & 235   & 2.28\%  & 280   & 2.74\%  \\
+    \bottomrule
+  \end{tabular}
+
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \caption{Pearson's Chi-squared Test Results for Trip Distribution by Employment Status}
+    \label{tab:Pearson's Chi-squared Test Results for Trip Distribution by Employment Status}
+    \begin{tabular}{lccc}
+    \toprule
+      Statistic & Value & Degrees of Freedom & p-value \\
+    \midrule
+     \(\chi^2\) & 3044.9 & 8 & \textless 2.2e-16 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\linewidth]{image4(2).png}
+    \caption{Trip Purpose Distribution by Employment Status}
+    \label{fig:enter-label}
+\end{figure}
+
+
+
+
+\subsection{Age Group Analysis (65+ vs. Under 65)}
+The chi-square test showed significant differences in trip purpose distribution between age groups ($\chi^2 = 1226.2$, df = 7, p \textless 0.001).
+
+
+\begin{table}[h!]
+  \centering
+  \caption{Trip Purpose Distribution for 65+ Years Old vs. 18-64 Years Old}
+  \label{tab:trip_purpose_age}
+  \begin{tabular}{lcccc}
+    \toprule
+    \multirow{2}{*}{Trip Purpose} & \multicolumn{2}{c}{65+ Years Old} & \multicolumn{2}{c}{18-64 Years Old} \\
+    \cmidrule(lr){2-3} \cmidrule(lr){4-5}
+                                 & Count & Percent & Count & Percent \\
+    \midrule
+    Home                         & 2699  & 35.62\% & 4337  & 33.43\% \\
+    Work                         & 273   & 3.60\%  & 2357  & 18.17\% \\
+    School/Religious   & 120   & 1.58\%  & 248   & 1.91\%  \\
+    Medical/Dental               & 281   & 3.71\%  & 243   & 1.87\%  \\
+    Shopping/Errands             & 2246  & 29.64\% & 2432  & 18.75\% \\
+    Social/Recreational          & 887   & 11.70\% & 1209  & 9.32\%  \\
+    Transport Someone            & 297   & 3.92\%  & 963   & 7.42\%  \\
+    Meals                        & 555   & 7.32\%  & 888   & 6.85\%  \\
+    Other                        & 220   & 2.90\%  & 295   & 2.27\%  \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[h!]
+    \centering
+    \caption{Pearson's Chi-squared Test Results for Trip Distribution by Age}
+    \label{tab:Pearson's Chi-squared Test Results for Trip Distribution by Age}
+    \begin{tabular}{lccc}
+    \toprule
+      Statistic & Value & Degrees of Freedom & p-value \\
+    \midrule
+     \(\chi^2\) & 1246.7 & 8 & \textless 2.2e-16 \\
+    \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{image5.png}
+    \caption{Trip Purpose Distribution by Age Group}
+    \label{fig:enter-label}
+\end{figure}
+
+\newpage
+\section{Analysis of Travel Mode Choices}
+
+The National Household Travel Survey (NHTS) 2017 dataset provides detailed information about trip characteristics through various variables. Two key variables used in this analysis are \texttt{TRPTRANS an}d \texttt{NUMONTRP}. The \texttt{TRPTRANS} variable indicates the mode of transportation used for each trip, while \texttt{NUMONTRP} represents the number of people on the trip, including the respondent. A new mode variable was created by combining \texttt{TRPTRANS} (trip mode) and \texttt{NUMONTRP} (occupancy).
+
+To align our analysis with commonly used categories in transportation, we rearranged the original NHTS trip mode categories. This rearrangement process involved consolidating some categories and creating new ones based on both the mode of transportation (\texttt{TRPTRANS}) and the number of occupants (\texttt{NUMONTRP}).
+
+Table \ref{tab:rearranged_modes} presents the outcome of this rearrangement exercise. The new categories include:
+
+\begin{table}[h!]
+    \centering
+    \caption{Rearranged Trip Mode Categories}
+    \label{tab:rearranged_modes}
+    \begin{tabular}{ccc}
+        \toprule
+        \textbf{New Trip Mode} & \textbf{TRPTRANS} & \textbf{NUMONTRP} \\
+        \midrule
+        \multirow{4}{*}{SOV}      & 03=Car            & \multirow{4}{*}{1}  \\
+                                  & 04=SUV            &                     \\
+                                  & 05=Van            &                     \\
+                                  & 06=Pickup truck   &                     \\
+        \midrule
+        \multirow{4}{*}{HOV2}     & 03=Car            & \multirow{4}{*}{2}  \\
+                                  & 04=SUV            &                     \\
+                                  & 05=Van            &                     \\
+                                  & 06=Pickup truck   &                     \\
+        \midrule
+        \multirow{4}{*}{HOV3+}    & 03=Car            & \multirow{4}{*}{\(>2\)}  \\
+                                  & 04=SUV            &                     \\
+                                  & 05=Van            &                     \\
+                                  & 06=Pickup truck   &                     \\
+        \midrule
+        \multirow{4}{*}{Bus}      & 10=School bus     & \multirow{4}{*}{\--} \\
+                                  & 11=Public or commuter bus &                     \\
+                                  & 13=Private / Charter / Tour / Shuttle bus &                     \\
+                                  & 14=City-to-city bus (Greyhound, Megabus) &                     \\
+        \midrule
+        \multirow{2}{*}{Rail}     & 15=Amtrak / Commuter rail & \multirow{2}{*}{\--} \\
+                                  & 16=Subway / elevated / light rail / streetcar &                     \\
+        \midrule
+        Bike                      & 02=Bicycle        & \--                  \\
+        \midrule
+        Walk                      & 01=Walk           & \--                  \\
+        \midrule
+        \multirow{2}{*}{Ride/carsharing} & 17=Taxi / limo (including Uber / Lyft) & \multirow{2}{*}{\--} \\
+                                  & 18=Rental car (Including Zipcar / Car2Go) &                     \\
+        \midrule
+        \multirow{7}{*}{Other}    & 07=Golf cart / Segway & \multirow{7}{*}{\--} \\
+                                  & 08=Motorcycle / Moped &                     \\
+                                  & 09=RV (motor home, ATV, snowmobile) &                     \\
+                                  & 12=Paratransit / Dial-a-ride &                     \\
+                                  & 19=Airplane         &                     \\
+                                  & 20=Boat / ferry / water taxi &                     \\
+                                  & 97=Something Else   &                     \\
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\subsection{Home-Based Work Trips: Auto-Deficient vs. Auto-Sufficient}
+
+This section examines the modal split for home-based work (HBW) trips, comparing individuals from auto-deficient and auto-sufficient households. An auto-deficient household is defined as having fewer vehicles than licensed drivers, while an auto-sufficient household has an equal or greater number of vehicles compared to licensed drivers. 
+
+
+
+\subsubsection{Modal Split Distribution}
+
+\par{Figure 1 presents the modal split distribution for HBW trips by auto availability. Single-occupancy vehicle (SOV) is the most prevalent mode for both groups. However, the percentage of SOV trips is significantly higher for individuals in auto-sufficient households (82.0\%) compared to auto-deficient households (61.5\%). A higher percentage of individuals in auto-deficient households use high-occupancy vehicle (HOV2) modes (21.1\%) compared to those in auto-sufficient households (9.1\%). Transit modes (bus and rail) and active modes (bike and walk) are used at a higher rate by auto-deficient households.}
+
+\begin{figure} [h!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Modal Split by Auto Availability.png}
+    \caption{Modal Split by Auto Availability}
+    \label{fig:Modal Split by Auto Availability}
+\end{figure}
+
+Figure \ref{fig:Modal Split by Auto Availability} visualizes the modal split distribution for HBW trips by auto availability, clearly illustrating the differences in mode choice between auto-deficient and auto-sufficient households.
+
+\subsubsection{Statistical Analysis}
+
+A two-sample t-test was conducted to determine if there is a significant difference in SOV usage between auto-deficient and auto-sufficient households. The results are presented in Table \ref{tab:T-Test of SOV Usage for Auto-Deficient vs. Auto-Sufficient Households}.
+
+The t-test results show that the two segments are statistically different from one another (t = -7.403; df = 2720; p \textless 0.001). This result supports the idea that individuals from auto-deficient households use single-occupancy vehicles to a lesser extent than those from auto-sufficient households. The 95\% confidence interval for the difference in means is [-0.2601, -0.1511], suggesting that auto-deficient households use SOVs between 15.11\% and 26.01\% less often than auto-sufficient households for home-based work trips.
+
+
+
+
+\begin{table}[h!]
+\centering
+\caption{T-Test of SOV Usage for Auto-Deficient vs. Auto-Sufficient Households}
+\label{tab:T-Test of SOV Usage for Auto-Deficient vs. Auto-Sufficient Households}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Statistic & Value & Degrees of Freedom & p-value \\ \midrule
+t-statistic & -7.403 & 2720 & \textless 0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+\subsection{All Trips: Low Income vs. High Income}
+
+This section examines the modal split for all trips, comparing individuals from low-income households (income \$29,999 or less) with those from high-income households (income \$75,000 or more). Income-based mode splits used \texttt{HHFAMINC} to define low-income ($\leq$\$29,999) and high-income ($\geq$\$75,000) groups.
+
+\subsubsection{Modal Split Distribution}
+
+Single-occupancy vehicle (SOV) trips are more prevalent among high-income households (52.48\%) compared to low-income households (45.00\%). Low-income individuals use active transportation modes more frequently, with higher percentages for walking (11.88\% vs. 8.25\%) and biking (1.70\% vs. 0.84\%). Low-income households show higher usage of public transit, with bus trips at 2.53\% (vs. 0.50\% for high-income) and rail trips at 0.43\% (vs. 0.13\% for high-income). 
+
+High-occupancy vehicle usage is relatively similar between the two income groups, with a slightly higher percentage of HOV2 trips for low-income households. Table \ref{tab:modal_split_income} presents the modal split distribution for all trips by income level. 
+
+\begin{table}[htbp]
+\centering
+\caption{Modal Split: Low Income vs. High Income}
+\label{tab:modal_split_income}
+\begin{tabular}{lrrrr}
+\toprule
+\multirow{2}{*}{Trip Mode} & \multicolumn{2}{c}{Income \$29,999 or less} & \multicolumn{2}{c}{Income \$75,000 or more} \\
+\cmidrule(lr){2-3} \cmidrule(lr){4-5}
+ & Count & Percent & Count & Percent \\
+\midrule
+SOV & 1459 & 45.00\% & 4173 & 52.48\% \\
+HOV2 & 832 & 25.66\% & 1949 & 24.51\% \\
+HOV3+ & 356 & 10.98\% & 907 & 11.41\% \\
+Walk & 385 & 11.88\% & 656 & 8.25\% \\
+Bike & 55 & 1.70\% & 67 & 0.84\% \\
+Bus & 82 & 2.53\% & 40 & 0.50\% \\
+Rail & 14 & 0.43\% & 10 & 0.13\% \\
+Other & 59 & 1.82\% & 149 & 1.87\% \\
+\midrule
+Total & 3242 & 100.00\% & 7951 & 99.99\% \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[width=0.8\linewidth]{Modal Split by Income Level.png}
+    \caption{Modal Split by Income Level}
+    \label{fig:Modal Split by Income Level}
+\end{figure}
+
+
+
+
+\subsubsection{Statistical Analysis}
+
+A two-sample t-test was conducted to determine if there is a significant difference in SOV usage between low-income and high-income groups. The results are presented in Table \ref{tab:ttest_income}.
+
+\begin{table}[h!]
+\centering
+\caption{T-Test Results: SOV Usage by Income Level}
+\label{tab:ttest_income}
+\begin{tabular}{@{}lccc@{}}
+\toprule
+Statistic & Value & Degrees of Freedom & p-value \\ \midrule
+t-statistic & 7.1961 & 11191 & \textless 0.001 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+
+The t-test results indicate a statistically significant difference in SOV usage between low-income and high-income groups (t = 7.1961, df = 11191, p \textless 0.001). The mean SOV usage for low-income households (0.4500) is significantly lower than that of high-income households (0.5248). The 95\% confidence interval for the difference in means is [0.0544, 0.0952], suggesting that high-income households use SOVs between 5.44\% and 9.52\% more often than low-income households.
+
+These findings suggest that income level has a substantial impact on mode choice, particularly in the use of single-occupancy vehicles, public transit, and active transportation modes.
+
+\section{Time of Day Distributions}
+The temporal distribution of trips was analyzed with particular focus on peak period travel patterns and the differences between work and non-work trips. The analysis examined trips during the traditional peak periods: AM peak (6:00-8:59 AM) and PM peak (4:00-6:59 PM). Time-of-day distributions used \texttt{STRTTIME} (start time) for home-based work trips which are filtered by \texttt{TRIPPURP="HBW"} and binned into 30- minute intervals. Home-based shopping trips are filtered by \texttt{TRIPPURP="HBSHOP}. AM (6:00–8:59 AM) and PM (4:00–6:59 PM) peaks were analyzed to calculate work-related trip percentages using \texttt{WHYFROM/WHYTO} variables (codes 3–4 for work).
+
+\subsection{Peak Period Analysis}
+
+The analysis of peak period travel revealed distinct differences between morning and evening travel patterns. During the AM peak period (6:00-8:59 AM), work-related trips constitute 38.7\% of all trips, while during the PM peak period (4:00-6:59 PM), they make up 26.6\% of trips. This asymmetry suggests that morning travel is more concentrated around work purposes compared to evening travel.
+
+
+\begin{table}[h]
+\centering
+\caption{Percent of trips with work end purposes and other purposes during the peak times}
+\begin{tabular}{lcc}
+\toprule
+Trip Purpose & AM Peak & PM Peak \\
+\midrule
+Other & 2,044 (61.3\%) & 3,048 (73.4\%) \\
+Work-related & 1,287 (38.7\%) & 1,104 (26.6\%) \\
+\midrule
+Total & 3,331 (100\%) & 4,152 (100\%) \\
+\bottomrule
+\end{tabular}
+\label{tab:peak_trips}
+\end{table}
+
+The PM peak period has a higher total number of trips (4,152) compared to the AM peak (3,331), suggesting more diverse travel purposes in the evening. Non-work trips dominate both peak periods, but their share is notably higher during the PM peak (73.4\% vs 61.3\%). Work-related trips show stronger concentration in the morning peak, with nearly 40\% of AM peak trips being work-related. The lower share of work trips during the PM peak (26.6\%)\\
+
+
+The temporal distribution of home-based work trips (Figure \ref{fig:Home-Based Work Trip Distribution}) shows distinct morning and afternoon peak periods. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Home-Based Work Trip Distribution.png}
+    \caption{Home-Based Work Trip Distribution}
+    \label{fig:Home-Based Work Trip Distribution}
+\end{figure}
+
+
+The temporal distribution of home-based Shopping trips (Figure \ref{fig:Home-Based Shopping Trip Distribution}) shows distinct morning and afternoon peak periods. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.9\linewidth]{Home-Based Shopping Trip Distribution.png}
+    \caption{Home-Based Shopping Trip Distribution}
+    \label{fig:Home-Based Shopping Trip Distribution}
+\end{figure}
+
+
+
+\newpage
+
+\section{Activity Duration Distributions}
+
+This section analyzes the daily activity durations for three key activity types: Work, Shopping/Errands, and Social/Recreational activities. Work (\texttt{WHYTRP1S=10}), shopping (\texttt{WHYTRP1S=40}), and social/recreational (\texttt{WHYTRP1S=50}) activities were aggregated per person. Zero-duration participants were excluded for this analysis and the rationale was to focus only on meaningful activities with measurable durations.
+
+\subsection{Work Activity Duration}
+The distribution of work activity durations is shown in Figure~\ref{fig:work_duration}. The participation rate for work activities is 30.3\%, with 1,711 participants out of 5,647 individuals. The duration statistics are summarized in Table~\ref{tab:work_stats}.As the distribution is getting close to a bell-shaped distribution, the sample respondents' work duration appears to be about normal.
+
+\begin{table}[H]
+    \centering
+    \caption{Work Activity Duration Statistics (in minutes)}
+    \label{tab:work_stats}
+    \begin{tabular}{@{}ccccccc@{}}
+        \toprule
+        Min & 1st Quartile & Median & Mean & 3rd Quartile & Max \\ 
+        \midrule
+        1   & 365          & 495    & 452.8 & 555          & 1035 \\ 
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{work_activity_distribution.png}
+    \caption{Work Activity Duration Distribution}
+    \label{fig:work_duration}
+\end{figure}
+
+
+\newpage
+\subsection{Shopping/Errands Activity Duration}
+The distribution of shopping/errands activity durations is presented in Figure~\ref{fig:shopping_duration}. The participation rate is 43.9\%, with 2,479 participants out of 5,647 individuals. Table~\ref{tab:shopping_stats} provides a summary of the duration statistics.
+
+\vspace{1cm}
+
+\begin{table}[h!]
+    \centering
+    \caption{Shopping/Errands Activity Duration Statistics (in minutes)}
+    \label{tab:shopping_stats}
+    \begin{tabular}{@{}ccccccc@{}}
+        \toprule
+        Min & 1st Quartile & Median & Mean   & 3rd Quartile & Max \\ 
+        \midrule
+        1   & 20           & 43     & 58.73  & 75           & 720 \\ 
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{shopping_activity_distribution.png}
+    \caption{Shopping/Errands Activity Duration Distribution}
+    \label{fig:shopping_duration}
+\end{figure}
+
+
+
+\newpage
+\subsection{Social/Recreational Activity Duration}
+The distribution of social/recreational activity durations is shown in Figure~\ref{fig:social_duration}. The participation rate is 25.7\%, with 1,451 participants out of 5,647 individuals. Table~\ref{tab:social_stats} summarizes the duration statistics.
+
+\vspace{1cm}
+
+
+\begin{table}[h!]
+    \centering
+    \caption{Social/Recreational Activity Duration Statistics (in minutes)}
+    \label{tab:social_stats}
+    \begin{tabular}{@{}ccccccc@{}}
+        \toprule
+        Min & 1st Quartile & Median & Mean   & 3rd Quartile & Max \\ 
+        \midrule
+        1   & 59.5         & 107    & 138.5  & 188          & 712 \\ 
+        \bottomrule
+    \end{tabular}
+\end{table}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.8\textwidth]{social_activity_distribution.png}
+    \caption{Social/Recreational Activity Duration Distribution}
+    \label{fig:social_duration}
+\end{figure}
+
+
+The analysis highlights that work activities have the longest average duration (452.8 minutes), followed by social/recreational activities (138.5 minutes) and shopping/errands activities (58.73 minutes). These findings provide insights into how individuals allocate their time across different activity types.
